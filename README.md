@@ -6,7 +6,6 @@ A beautiful, interactive portfolio website built with React and Tailwind CSS fea
 
 - **Night Sky Theme**: Beautiful gradient backgrounds with star animations
 - **Interactive Elements**: Click to create falling stars, sparkle animations
-- **Ambient Audio**: Optional background ambient sound with volume control
 - **Responsive Design**: Works perfectly on desktop and mobile devices
 - **Smooth Animations**: Fade-in effects, hover animations, and particle systems
 - **Modern UI**: Clean, professional design with consistent styling
