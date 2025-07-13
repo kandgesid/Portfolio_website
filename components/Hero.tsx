@@ -50,8 +50,8 @@ const Hero: React.FC = () => {
               <span className="sparkle absolute top-0 right-1/2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.3s' }}></span>
               <span className="sparkle absolute bottom-1/2 left-1/4 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
             </a>
-            <a href="#projects" className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-lg">
-              View Projects
+            <a href="https://drive.google.com/file/d/1X9an1KN_pAsuryorlSb-7nD3iWP9XjJF/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-lg">
+              View Resume
               <span className="sparkle absolute top-0 left-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
               <span className="sparkle absolute top-0 right-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.1s' }}></span>
               <span className="sparkle absolute bottom-0 left-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.2s' }}></span>
