@@ -11,7 +11,7 @@ const AudioToggle: React.FC = () => {
     console.log('Initializing audio component...');
     
     // Create audio element
-    const audio = new Audio('resources/Paper Planes - Night Skies.mp3');
+    const audio = new Audio('resources/ambient-night-sky.mp3');
     audio.loop = true;
     audio.volume = volume; // Use state volume
     audio.preload = 'auto';
