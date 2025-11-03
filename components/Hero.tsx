@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AvatarPlaceholderIcon, StarIcon } from './icons';
+import { RESUME_LINKS } from '../constants';
 
 const Hero: React.FC = () => {
+  const [showResumeModal, setShowResumeModal] = useState(false);
+
+  const handleResumeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowResumeModal(true);
+  };
+
+  const openResume = (type: 'ml' | 'swe') => {
+    const resumeLink = type === 'ml' ? RESUME_LINKS.MACHINE_LEARNING : RESUME_LINKS.SOFTWARE_DEVELOPMENT;
+    window.open(resumeLink, '_blank', 'noopener,noreferrer');
+    setShowResumeModal(false);
+  };
+
   return (
     <section 
       id="home"
@@ -50,16 +64,71 @@ const Hero: React.FC = () => {
               <span className="sparkle absolute top-0 right-1/2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.3s' }}></span>
               <span className="sparkle absolute bottom-1/2 left-1/4 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
             </a>
-            <a href="https://drive.google.com/file/d/1X9an1KN_pAsuryorlSb-7nD3iWP9XjJF/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-lg">
+            <button onClick={handleResumeClick} className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-lg">
               View Resume
               <span className="sparkle absolute top-0 left-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
               <span className="sparkle absolute top-0 right-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.1s' }}></span>
               <span className="sparkle absolute bottom-0 left-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.2s' }}></span>
               <span className="sparkle absolute bottom-0 right-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.3s' }}></span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Resume Selection Modal */}
+      {showResumeModal && (
+        <div 
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+          onClick={() => setShowResumeModal(false)}
+        >
+          <div 
+            className="bg-slate-800/95 border border-slate-700 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-zinc-500/20 animate-fade-slide-up"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-2xl font-bold text-white mb-2 text-center">Choose Resume Type</h3>
+            <p className="text-slate-400 text-center mb-6">Select which resume you'd like to view</p>
+            
+            <div className="space-y-4">
+              <button
+                onClick={() => openResume('swe')}
+                className="w-full group relative bg-zinc-300 text-slate-900 font-bold py-4 px-6 rounded-lg shadow-lg hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="text-left">
+                    <div className="text-lg">💻 Software Development</div>
+                    <div className="text-xs text-slate-700 font-normal">Full-Stack & Backend Engineering</div>
+                  </div>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
+
+              <button
+                onClick={() => openResume('ml')}
+                className="w-full group relative bg-slate-700/70 border border-slate-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-slate-600/70 hover:border-zinc-300 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="text-left">
+                    <div className="text-lg">🤖 Machine Learning</div>
+                    <div className="text-xs text-slate-400 font-normal">AI/ML & Data Science</div>
+                  </div>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+
+            <button
+              onClick={() => setShowResumeModal(false)}
+              className="mt-6 w-full text-slate-400 hover:text-white py-2 text-sm transition-colors"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

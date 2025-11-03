@@ -1,7 +1,23 @@
 import type { ExperienceItem, Project, SkillCategory, ContactInfo, EducationItem } from './types';
 import { EmailIcon, PhoneIcon, GitHubIcon, LinkedInIcon } from './components/icons';
 
+// Resume Links
+export const RESUME_LINKS = {
+  SOFTWARE_DEVELOPMENT: 'https://drive.google.com/file/d/17THZE1QeqtG62MPaCHDQfNM-madudF2E/view?usp=sharing',
+  MACHINE_LEARNING: 'https://drive.google.com/file/d/1_AMqf20O1aTkrzuTpc5_81aT1lHsHlB-/view?usp=sharing' // Update with ML resume link
+};
+
 export const PROFESSIONAL_EXPERIENCE: ExperienceItem[] = [
+  {
+    role: 'Junior Java Developer',
+    company: 'LAM Research',
+    period: 'Oct 2025 - Present',
+    tasks: [
+      'Developing and maintaining enterprise-level Java applications for semiconductor manufacturing solutions.',
+      'Collaborating with cross-functional teams to design and implement scalable backend services.',
+      'Contributing to code reviews and implementing best practices for software development lifecycle.'
+    ],
+  },
   {
     role: 'Research Assistant : Full Stack Engineer',
     company: 'Human Computer Interaction Lab, SCU',
@@ -61,6 +77,17 @@ export const EDUCATION_DATA: EducationItem[] = [
 
 export const FEATURED_PROJECTS: Project[] = [
     {
+        title: 'LexiQ: Multi-Agent Legal Research System',
+        description: [
+            'Built a serverless AWS-based multi-agent system (Precedent RAG via FAISS + LangChain, News via LLM + GNews API) for cited legal insights.',
+            'Enhanced retrieval accuracy with custom chunking, metadata tagging, and scoring for grounded, explainable LLM outputs.',
+            'Enforced enterprise-grade compliance via Vanta MCP with PII masking, validation, and audit logging across agent workflows.',
+            'Won "Best Use of AWS" and "Best Use of Vanta MCP" at the Secure AI Agents Hackathon for privacy-first agent architecture.'
+        ],
+        githubUrl: 'https://github.com/kandgesid/LexiQ-AI-powered-multi-agent-legal-research-platform',
+        techStack: ['AWS Bedrock', 'LangChain', 'Python', 'LLM', 'RAG', 'FAISS']
+    },
+    {
         title: 'MilkMate – Milk Delivery App',
         description: [
             'Digitized end-to-end milk delivery workflows with 10+ integrated modules, replacing manual tracking.',
@@ -115,7 +142,7 @@ export const SKILLS_DATA: SkillCategory[] = [
     },
     {
         title: 'Frameworks & Libraries',
-        skills: ['Spring Boot', 'Spring Security', 'AWS Lambda', 'Quarkus', 'Next.js', 'Node.js', 'React.js', 'React Native', 'PyTorch', 'TensorFlow', 'Keras']
+        skills: ['Spring Boot', 'Spring Security', 'AWS Lambda', 'Quarkus', 'Next.js', 'Node.js', 'React.js', 'React Native']
     },
     {
         title: 'Cloud & DevOps',
@@ -128,6 +155,10 @@ export const SKILLS_DATA: SkillCategory[] = [
     {
         title: 'Architecture & Design',
         skills: ['OOP', 'System Design', 'Distributed system', 'Multi threading']
+    },
+    {
+        title: 'ML & AI',
+        skills: ['TensorFlow', 'Keras', 'LLM', 'RAG', 'AWS Bedrock', 'LangChain', 'FAISS']
     }
 ]
 
