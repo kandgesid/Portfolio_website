@@ -77,6 +77,16 @@ export const EDUCATION_DATA: EducationItem[] = [
 
 export const FEATURED_PROJECTS: Project[] = [
     {
+        title: 'EduReel.AI: Self-Evolving Micro-Learning Platform',
+        description: [
+            'Built an Airia+Claude multi-agent workflow generating sub-30-second personalized lessons, winning 1st Prize in the Airia Track.',
+            'Developed a FastAPI backend with a React UI for real-time lesson generation and adaptive quizzes.',
+            'Used FastAPI\'s RAG-based engine to personalize lesson difficulty, tone, and content from user history.'
+        ],
+        githubUrl: 'https://github.com/kandgesid/EduReel.AI',
+        techStack: ['Airia', 'Claude', 'RAG', 'FastAPI', 'React', 'Python', 'AI']
+    },
+    {
         title: 'LexiQ: Multi-Agent Legal Research System',
         description: [
             'Built a serverless AWS-based multi-agent system (Precedent RAG via FAISS + LangChain, News via LLM + GNews API) for cited legal insights.',
@@ -98,7 +108,7 @@ export const FEATURED_PROJECTS: Project[] = [
 
         ],
         githubUrl: 'https://github.com/kandgesid/Milkman',
-        techStack: ['System Design', 'Java', 'Spring Boot', 'React Native', 'PostgreSQL']
+        techStack: ['Design Patterns','OOP','System Design', 'Java', 'Spring Boot', 'React Native', 'PostgreSQL']
     },
     {
         title: 'Pocket Insights – Finance Tracker',
