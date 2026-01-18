@@ -1,6 +1,7 @@
 
 export { AvatarPlaceholderIcon } from './AvatarPlaceholderIcon';
 export { CloseIcon } from './CloseIcon';
+export { DevpostIcon } from './DevpostIcon';
 export { EmailIcon } from './EmailIcon';
 export { GitHubIcon } from './GitHubIcon';
 export { HamburgerIcon } from './HamburgerIcon';

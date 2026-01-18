@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AvatarPlaceholderIcon, StarIcon } from './icons';
 import { RESUME_LINKS } from '../constants';
 
 const Hero: React.FC = () => {
@@ -43,28 +42,28 @@ const Hero: React.FC = () => {
 
         {/* Text Content */}
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white whitespace-nowrap leading-tight mb-4 animate-fade-slide-up" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white whitespace-nowrap leading-tight mb-4 animate-fade-slide-up" style={{ animationDelay: '0.2s' }}>
             Siddhant Kandge
           </h1>
           <div className="inline-block mb-4">
-             <p className="text-xl md:text-2xl text-slate-300 animate-typing">
+             <p className="text-lg md:text-xl text-slate-300 animate-typing">
               Software Engineer & Full-Stack Developer
             </p>
           </div>
           <div className="animate-fade-slide-up" style={{ animationDelay: '4.5s' }}>
-            <p className="text-lg text-slate-400 mb-8 max-w-xl mx-auto flex flex-wrap justify-center items-center gap-x-2 gap-y-1">
+            <p className="text-sm md:text-base text-slate-400 mb-8 max-w-xl mx-auto flex flex-wrap justify-center items-center gap-x-2 gap-y-1">
                <span className="inline-block bg-green-500/10 text-green-300 text-xs font-semibold px-2 py-1 rounded-full">Available for Hire</span>
                <span>Building scalable apps & intelligent systems.</span>
             </p>
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-slide-up" style={{ animationDelay: '4.8s' }}>
-            <a href="#contact" className="group relative bg-zinc-300 text-slate-900 font-bold py-3 px-8 rounded-lg shadow-lg shadow-zinc-300/20 hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105 text-lg">
+            <a href="#contact" className="group relative bg-zinc-300 text-slate-900 font-bold py-2.5 px-6 rounded-lg shadow-lg shadow-zinc-300/20 hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105 text-base">
               Contact Me
               <span className="sparkle absolute top-0 left-0 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.2s' }}></span>
               <span className="sparkle absolute top-0 right-1/2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.3s' }}></span>
               <span className="sparkle absolute bottom-1/2 left-1/4 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
             </a>
-            <button onClick={handleResumeClick} className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-lg">
+            <button onClick={handleResumeClick} className="group relative bg-slate-800/50 border border-slate-700 text-white font-bold py-2.5 px-6 rounded-lg hover:bg-slate-700/70 hover:border-white transition-all duration-300 transform hover:scale-105 text-base">
               View Resume
               <span className="sparkle absolute top-0 left-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0s' }}></span>
               <span className="sparkle absolute top-0 right-0 w-2 h-2 opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.1s' }}></span>
@@ -85,20 +84,20 @@ const Hero: React.FC = () => {
             className="bg-slate-800/95 border border-slate-700 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-zinc-500/20 animate-fade-slide-up"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold text-white mb-2 text-center">Choose Resume Type</h3>
-            <p className="text-slate-400 text-center mb-6">Select which resume you'd like to view</p>
+            <h3 className="text-xl font-bold text-white mb-2 text-center">Choose Resume Type</h3>
+            <p className="text-sm text-slate-400 text-center mb-6">Select which resume you'd like to view</p>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               <button
                 onClick={() => openResume('swe')}
-                className="w-full group relative bg-zinc-300 text-slate-900 font-bold py-4 px-6 rounded-lg shadow-lg hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105"
+                className="w-full group relative bg-zinc-300 text-slate-900 font-bold py-3 px-5 rounded-lg shadow-lg hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105"
               >
                 <div className="flex items-center justify-between">
                   <div className="text-left">
-                    <div className="text-lg">💻 Software Development</div>
+                    <div className="text-base">💻 Software Development</div>
                     <div className="text-xs text-slate-700 font-normal">Full-Stack & Backend Engineering</div>
                   </div>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -106,11 +105,11 @@ const Hero: React.FC = () => {
 
               <button
                 onClick={() => openResume('ml')}
-                className="w-full group relative bg-slate-700/70 border border-slate-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-slate-600/70 hover:border-zinc-300 transition-all duration-300 transform hover:scale-105"
+                className="w-full group relative bg-slate-700/70 border border-slate-600 text-white font-bold py-3 px-5 rounded-lg hover:bg-slate-600/70 hover:border-zinc-300 transition-all duration-300 transform hover:scale-105"
               >
                 <div className="flex items-center justify-between">
                   <div className="text-left">
-                    <div className="text-lg">🤖 Machine Learning</div>
+                    <div className="text-base">🤖 Machine Learning</div>
                     <div className="text-xs text-slate-400 font-normal">AI/ML & Data Science</div>
                   </div>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

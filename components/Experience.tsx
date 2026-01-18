@@ -12,24 +12,24 @@ const ExperienceCard: React.FC<{
   <div
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
-    className="group relative bg-slate-800/60 backdrop-blur-sm p-6 rounded-lg border border-slate-700 w-full transition-all duration-300 group-hover:border-zinc-300/50 group-hover:scale-[1.03] group-hover:shadow-2xl group-hover:shadow-zinc-500/10 overflow-hidden"
+    className="group relative bg-slate-800/60 backdrop-blur-sm p-5 rounded-lg border border-slate-700 w-full transition-all duration-300 group-hover:border-zinc-300/50 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-zinc-500/10 overflow-hidden"
   >
     {/* Moonlight Glow */}
     <div className="absolute inset-[-15px] bg-zinc-300/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
 
     {/* Pointer Arrow */}
-    <div className={`absolute top-7 -mt-2 w-4 h-4 bg-slate-800/95 transform rotate-45 ${
+    <div className={`absolute top-6 -mt-2 w-3 h-3 bg-slate-800/95 transform rotate-45 ${
       side === 'left' 
-        ? 'right-0 -mr-2 border-t border-r border-slate-700' 
-        : 'left-0 -ml-2 border-b border-l border-slate-700'
+        ? 'right-0 -mr-1.5 border-t border-r border-slate-700' 
+        : 'left-0 -ml-1.5 border-b border-l border-slate-700'
     }`}></div>
 
-    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{item.role}</h3>
-    <p className="text-base md:text-lg text-zinc-300 mb-4">{item.company} | {item.period}</p>
-    <ul className="space-y-3 text-base md:text-lg text-slate-300">
+    <h3 className="text-lg md:text-xl font-bold text-white mb-1.5">{item.role}</h3>
+    <p className="text-sm md:text-base text-zinc-300 mb-3">{item.company} | {item.period}</p>
+    <ul className="space-y-2 text-sm md:text-base text-slate-300">
       {item.tasks.map((task, i) => (
         <li key={i} className="flex items-start">
-          <span className="text-zinc-300 mr-3 mt-1.5 flex-shrink-0">•</span>
+          <span className="text-zinc-300 mr-2 mt-1 flex-shrink-0">•</span>
           <span className="leading-relaxed">{task}</span>
         </li>
       ))}

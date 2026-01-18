@@ -34,12 +34,12 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
         
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{project.title}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{project.title}</h2>
         
-        <ul className="space-y-3 text-base md:text-lg text-slate-300 mb-6">
+        <ul className="space-y-2 text-sm md:text-base text-slate-300 mb-5">
           {project.description.map((desc, i) => (
             <li key={i} className="flex items-start">
-              <span className="text-zinc-300 mr-3 mt-1 flex-shrink-0" style={{'filter': 'drop-shadow(0 0 3px #f4f4f5)'}}>✦</span>
+              <span className="text-zinc-300 mr-2 mt-0.5 flex-shrink-0" style={{'filter': 'drop-shadow(0 0 3px #f4f4f5)'}}>✦</span>
               <span>{desc}</span>
             </li>
           ))}
@@ -50,7 +50,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-slate-800 text-white font-semibold py-2 px-4 rounded-md hover:bg-slate-700 transition-colors text-base md:text-lg"
+            className="inline-flex items-center gap-2 bg-slate-800 text-white font-semibold py-2 px-3 rounded-md hover:bg-slate-700 transition-colors text-sm"
           >
             <GitHubIcon className="w-5 h-5" />
             View on GitHub
@@ -68,16 +68,16 @@ const ProjectCard: React.FC<{
   return (
     <div className="group relative">
       <div className="absolute inset-[-15px] bg-zinc-300/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-      <div className="relative bg-slate-800/60 backdrop-blur-sm p-6 rounded-lg border border-slate-700 overflow-hidden transition-all duration-300 group-hover:border-zinc-300/50 group-hover:scale-[1.03] group-hover:shadow-2xl group-hover:shadow-zinc-500/10 min-h-[16rem] flex flex-col">
+      <div className="relative bg-slate-800/60 backdrop-blur-sm p-5 rounded-lg border border-slate-700 overflow-hidden transition-all duration-300 group-hover:border-zinc-300/50 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-zinc-500/10 h-[18rem] flex flex-col">
         <div className="flex-grow">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{project.title}</h3>
+          <h3 className="text-lg md:text-xl font-bold text-white mb-2.5">{project.title}</h3>
           <div className="flex flex-wrap gap-1.5">
             {project.techStack?.map(tech => (
-              <span key={tech} className="bg-zinc-900/50 text-zinc-200 text-xs font-medium px-2 py-1 rounded-full">{tech}</span>
+              <span key={tech} className="bg-zinc-900/50 text-zinc-200 text-xs font-medium px-2 py-0.5 rounded-full">{tech}</span>
             ))}
           </div>
         </div>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-3">
           <a
             href={project.githubUrl}
             target="_blank"
@@ -86,11 +86,11 @@ const ProjectCard: React.FC<{
             aria-label="View on GitHub"
             onClick={(e) => e.stopPropagation()}
           >
-            <GitHubIcon className="w-6 h-6"/>
+            <GitHubIcon className="w-5 h-5"/>
           </a>
           <button
             onClick={onShowMore}
-            className="bg-zinc-600/50 text-white text-sm md:text-base font-semibold py-2 px-4 rounded-md hover:bg-zinc-500/70 transition-colors"
+            className="bg-zinc-600/50 text-white text-sm font-semibold py-2 px-3 rounded-md hover:bg-zinc-500/70 transition-colors"
           >
             Show More
           </button>

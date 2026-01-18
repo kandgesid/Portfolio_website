@@ -1,10 +1,10 @@
 import type { ExperienceItem, Project, SkillCategory, ContactInfo, EducationItem } from './types';
-import { EmailIcon, PhoneIcon, GitHubIcon, LinkedInIcon } from './components/icons';
+import { EmailIcon, PhoneIcon, GitHubIcon, LinkedInIcon, DevpostIcon } from './components/icons';
 
 // Resume Links
 export const RESUME_LINKS = {
-  SOFTWARE_DEVELOPMENT: 'https://drive.google.com/file/d/17THZE1QeqtG62MPaCHDQfNM-madudF2E/view?usp=sharing',
-  MACHINE_LEARNING: 'https://drive.google.com/file/d/1_AMqf20O1aTkrzuTpc5_81aT1lHsHlB-/view?usp=sharing' // Update with ML resume link
+  SOFTWARE_DEVELOPMENT: 'https://drive.google.com/file/d/1G9_mEtA_DsoqUM_W5iYEnXkQrBgeqAqT/view?usp=drive_link',
+  MACHINE_LEARNING: 'https://drive.google.com/file/d/1cfn07UF017_j2oRCFbqKah3M3DfsLoS8/view?usp=drive_link' // Update with ML resume link
 };
 
 export const PROFESSIONAL_EXPERIENCE: ExperienceItem[] = [
@@ -76,6 +76,20 @@ export const EDUCATION_DATA: EducationItem[] = [
 
 
 export const FEATURED_PROJECTS: Project[] = [
+  {
+    title: 'Distributed Real-Time Stock Market Platform',
+    description: [
+        'Designed and implemented a fault-tolerant distributed publish–subscribe stock market system using Java and Spring Boot, eliminating single points of failure through decentralized broker coordination.',
+        'Implemented Bully leader election for per-ticker leadership, epidemic gossip protocols for decentralized replication, and Lamport logical clocks to guarantee globally ordered event delivery and eventual consistency.',
+        'Evaluated system behavior under failures, achieving automatic leader recovery in ~4–5 seconds, full cluster convergence within 1–3 seconds, and sub-100ms end-to-end latency, with real-time visualization via React and WebSockets.'
+    ],
+    githubUrl: 'https://github.com/<your-repo-link>',
+    techStack: [
+        'Java', 'Spring Boot', 'Distributed Systems', 'WebSockets', 'Publish–Subscribe',
+        'Leader Election (Bully Algorithm)', 'Gossip Protocols', 'Lamport Logical Clocks',
+        'Multithreading', 'Fault Tolerance'
+    ]
+    },
     {
         title: 'EduReel.AI: Self-Evolving Micro-Learning Platform',
         description: [
@@ -196,5 +210,11 @@ export const CONTACT_DETAILS: ContactInfo[] = [
         title: 'LinkedIn',
         value: 'Connect with me',
         href: 'https://www.linkedin.com' // Placeholder
+    },
+    {
+        icon: DevpostIcon,
+        title: 'Devpost',
+        value: 'devpost.com/skandge',
+        href: 'https://devpost.com/skandge'
     }
 ]

@@ -6,14 +6,17 @@ import type { ContactInfo } from '../types';
 import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const ContactCard: React.FC<{ item: ContactInfo }> = ({ item }) => (
-  <a href={item.href} target="_blank" rel="noopener noreferrer" className="group relative bg-slate-800/60 backdrop-blur-sm p-6 rounded-lg border border-slate-700 flex items-center gap-4 transition-all duration-300 hover:border-zinc-300/50 hover:scale-[1.03] hover:shadow-2xl hover:shadow-zinc-500/10 overflow-hidden">
-    <div className="absolute inset-[-15px] bg-zinc-300/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-    <div className="text-zinc-300">
-      <item.icon className="w-8 h-8" />
+  <a 
+    href={item.href} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="group flex items-center gap-4 py-3 px-4 rounded-lg transition-all duration-300 hover:bg-slate-800/40"
+  >
+    <div className="text-zinc-300 group-hover:text-white transition-colors">
+      <item.icon className="w-7 h-7" />
     </div>
-    <div>
-      <h3 className="text-2xl font-bold text-white">{item.title}</h3>
-      <p className="text-lg text-slate-400">{item.value}</p>
+    <div className="text-white text-base md:text-lg font-normal group-hover:underline underline-offset-4">
+      {item.value}
     </div>
   </a>
 );
@@ -112,14 +115,14 @@ const ContactForm: React.FC = () => {
 
 
   return (
-    <div className="group relative bg-slate-800/60 backdrop-blur-sm p-6 rounded-lg border border-slate-700 transition-all duration-300 hover:border-zinc-300/50 hover:scale-[1.02] hover:shadow-2xl hover:shadow-zinc-500/10 overflow-hidden">
+    <div className="group relative bg-slate-800/60 backdrop-blur-sm p-5 rounded-lg border border-slate-700 transition-all duration-300 hover:border-zinc-300/50 hover:scale-[1.01] hover:shadow-2xl hover:shadow-zinc-500/10 overflow-hidden h-full">
       <div className="absolute inset-[-15px] bg-zinc-300/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
       
-      <h3 className="text-2xl font-bold text-white mb-6 text-center">Send Message</h3>
+      <h3 className="text-lg font-bold text-white mb-4 text-center">Send Message</h3>
       
-      <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-3">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-2">
+          <label htmlFor="name" className="block text-xs font-medium text-zinc-300 mb-1.5">
             Name
           </label>
           <input
@@ -129,13 +132,13 @@ const ContactForm: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300"
+            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300"
             placeholder="Your name"
           />
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-2">
+          <label htmlFor="email" className="block text-xs font-medium text-zinc-300 mb-1.5">
             Email
           </label>
           <input
@@ -145,13 +148,13 @@ const ContactForm: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300"
+            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300"
             placeholder="your.email@example.com"
           />
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-zinc-300 mb-2">
+          <label htmlFor="message" className="block text-xs font-medium text-zinc-300 mb-1.5">
             Message
           </label>
           <textarea
@@ -160,8 +163,8 @@ const ContactForm: React.FC = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            rows={4}
-            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300 resize-none"
+            rows={3}
+            className="w-full bg-slate-700/50 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-zinc-400 focus:ring-2 focus:ring-zinc-400/20 transition-all duration-300 resize-none"
             placeholder="Your message..."
           />
         </div>
@@ -169,7 +172,7 @@ const ContactForm: React.FC = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-zinc-600/50 text-white font-semibold py-3 px-6 rounded-lg hover:bg-zinc-500/70 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-zinc-600/50 text-white text-sm font-semibold py-2.5 px-4 rounded-lg hover:bg-zinc-500/70 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
@@ -194,22 +197,22 @@ const ContactForm: React.FC = () => {
 const Contact: React.FC = () => {
   return (
     <Section id="contact" title="Get In Touch">
-      <p className="max-w-2xl mx-auto text-center text-xl text-slate-300 mb-12">
+      <p className="max-w-2xl mx-auto text-center text-base text-slate-300 mb-10">
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
       </p>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {/* Contact Cards - LinkedIn and GitHub */}
-        <div className="lg:col-span-2">
-          <div className="grid grid-cols-1 gap-6">
+      <div className="max-w-2xl mx-auto">
+        {/* Contact Links */}
+        <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 md:p-8">
+          <div className="space-y-1">
             {CONTACT_DETAILS.map((item, index) => (
               <ContactCard key={index} item={item} />
             ))}
           </div>
         </div>
         
-        {/* Contact Form */}
-        <div className="lg:col-span-1">
+        {/* Optional: Contact Form below if needed */}
+        <div className="mt-8">
           <ContactForm />
         </div>
       </div>
